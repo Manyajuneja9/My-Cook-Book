@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search and Display Card</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <h2>MY COOK BOOK</h2>
+    </div>
+   
+    <div class="menu-toggle"   onclick="toggleMenu()">☰</div>
+    <div class="menu">
+      <div class="menu-item">
+        <a href="#menus" onclick="toggleSubmenu(event)">Menus</a>
+        <div class="submenu">
+          <a href="#punjabi" id="#punjabi">Punjabi</a>
+          <a href="#south" id="#south">South Indian</a>
+          <a href="#snacks" id="#snacks">Snacks</a>
+        </div>
+      </div>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Signup</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  
+  <header class="header">
+    <div class="container">
+        <h1 class="main-title">Learn. Cook. Share.</h1>
+            <h2 class="subtitle">Cooking Made Easy.</h2>
+            <p class="description">
+                Say goodbye to long and frustrating food blogs and recipe videos.<br>
+                Access our recipe cards to prepare any dish in minutes.
+            </p>
+    
+    <div class="search-section">
+        
+      <input type="text" style="width: 80%" class="searchbox" id="search-input" placeholder="Type an item name..." />
+      <button id="search-button" class="searchBtn">Search</button>
+        
+    </div>
+      </div>
+  </header>
+ 
+
+  <!-- Row 1-->
+  <br><br><br>
+  <div class="container" style="max-width: 1320px;">
+    <h1 style="text-align: center;">FEATURED RECIPES</h1><br><br>
+    <h3 style="text-align: center;" id="punjabi">Punjabi Cuisines</h3><br><br>
+  </div>
+
+    <div id="cards-container">
+
+      <!--staring of card-->
+      <div class="card" data-name="Aloo Prantha">
+        <img class="card-img-top" src="images/allo.jpg" alt="Card image" style="width: 300px;" height="235px">
+        <h2>Aloo Prantha</h2>
+        <p>Punjabian Di Shaan</p>
+        <div class="rating" data-recipe="Aloo Prantha">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal1">View Recipe</a>
+
+        <div class="modal" id="myModal1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Aloo Prantha</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                Here's a step-by-step guide to making Aloo Ka Paratha:
+
+                Step 1: Prepare the Dough
+                Mix Flour and Salt: In a mixing bowl, combine 2 cups of whole wheat flour and a pinch of
+                salt.
+                Add Water: Gradually add water, mixing with your hands, until the dough comes together.
+                Knead the Dough: Knead the dough for about 5-7 minutes until smooth. Optionally, you can
+                add a tablespoon of oil for softness.
+                Rest the Dough: Cover the dough with a damp cloth and let it rest for 20-30 minutes.
+                Step 2: Prepare the Filling
+                Boil and Mash Potatoes: Boil the potatoes until soft, then peel and mash them in a bowl.
+                Mix Ingredients: Add cumin seeds, chopped green chilies, grated ginger (if using),
+                chopped coriander leaves, salt, garam masala, and red chili powder to the mashed
+                potatoes. Mix well.
+                Step 3: Roll the Parathas
+                Divide the Dough: After resting, divide the dough into small balls (about the size of a
+                golf ball).
+                Flatten the Dough: Take one dough ball and flatten it slightly with your fingers. Dust
+                it with some flour.
+                Add Filling: Place a portion of the potato filling in the center of the flattened dough.
+                Bring the edges together to enclose the filling.
+                Roll Out the Paratha: Gently flatten the stuffed dough ball and roll it out into a
+                circle, dusting with flour as needed to prevent sticking. Aim for about 6-7 inches in
+                diameter.
+                Step 4: Cook the Parathas
+                Heat the Pan: Preheat a tawa (flat skillet) or a non-stick pan over medium heat.
+                Cook the Paratha: Place the rolled paratha on the hot pan. Cook for about 1-2 minutes
+                until bubbles form.
+                Flip and Apply Ghee: Flip the paratha and apply ghee or oil on the cooked side. Cook for
+                another 1-2 minutes until golden brown. Press lightly with a spatula to ensure even
+                cooking.
+                Repeat: Repeat the process for the remaining dough and filling.
+                Step 5: Serve
+                Serve hot Aloo Ka Parathas with yogurt, pickle, or chutney.
+                Enjoy your delicious homemade Aloo Ka Paratha!
+
+
+                <br>
+                <a href="https://youtu.be/r2N8ObqAgy0?feature=shared">Watch Video</a><br>
+                <img src="images/allo.jpg" height="300px" width="300px">
+
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ending of card-->
+
+      <!--staring of card-->
+      <div class="card" data-name="Mutter Paneer">
+        <img class="card-img-top" src="images/matar.jfif" alt="Card image" style="width: 300px;" height="235px">
+        <h2>Mutter Paneer</h2>
+        <p>Some example text some example text. John Doe is an architect and engineer</p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal2">View Recipe</a>
+
+        <div class="modal" id="myModal2">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">Mutter Paneer</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                      Here’s a step-by-step guide to making Matar Paneer:
+
+                      Step 1: Prepare the Ingredients
+                      Chop and Puree: Finely chop the onions and prepare a puree of the tomatoes.
+                      Cube the Paneer: Cut the paneer into bite-sized cubes.
+                      Step 2: Cook the Base
+                      Heat Oil: In a pan, heat 2 tablespoons of oil or ghee over medium heat.
+                      Add Cumin Seeds: Once the oil is hot, add 1 teaspoon of cumin seeds. Let them sizzle for
+                      a few seconds.
+                      Sauté Onions: Add the chopped onions and sauté until they turn golden brown.
+                      Step 3: Add Spices and Tomato Puree
+                      Ginger-Garlic Paste: Stir in 1 tablespoon of ginger-garlic paste and sauté for another
+                      minute until the raw smell disappears.
+                      Green Chilies: Add the slit or chopped green chilies and sauté for a minute.
+                      Add Tomato Puree: Pour in the tomato puree and cook for 5-7 minutes, stirring
+                      occasionally, until the oil begins to separate from the mixture.
+                      Step 4: Add Spices
+                      Turmeric and Red Chili Powder: Add 1/2 teaspoon of turmeric powder and 1 teaspoon of red
+                      chili powder. Mix well.
+                      Add Green Peas: Stir in 1 cup of green peas (if using frozen, no need to thaw) and cook
+                      for 2-3 minutes.
+                      Step 5: Add Paneer
+                      Paneer Cubes: Gently add the paneer cubes to the pan. Stir carefully to coat them with
+                      the masala.
+                      Garam Masala and Salt: Add 1 teaspoon of garam masala and salt to taste. Mix gently.
+                      Step 6: Simmer
+                      Water: If the mixture looks too thick, add a little water (about 1/2 cup) to adjust the
+                      consistency.
+                      Simmer: Cover the pan and let it simmer for about 5-7 minutes, allowing the flavors to
+                      meld together.
+                      Step 7: Finishing Touches
+                      Cream or Milk (Optional): If you want a richer gravy, add 1/2 cup of cream or milk at
+                      this stage. Stir well.
+                      Kasuri Methi (Optional): Crush 1 teaspoon of kasuri methi between your palms and
+                      sprinkle it over the curry for added flavor.
+                      Step 8: Serve
+                      Garnish: Turn off the heat and garnish with fresh coriander leaves.
+                      Serving: Serve hot with roti, naan, or rice.
+                      Enjoy your delicious homemade Matar Paneer!
+
+                      <br>
+                      <a href="https://youtu.be/ZknwxYH8g2A?feature=shared">Watch Video</a><br>
+                      <img src="images/matar.png" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      </div>
+      <!-- ending of card-->
+
+      <!--staring of card-->
+      <div class="card" data-name="Kadhi Pakoda">
+        <img class="card-img-top" src="images/kadai.jpg" alt="Card image" style="width: 300px;" height="235px">
+        <h2>Kadhi Pakoda</h2>
+        <p>Some example text some example text. John Doe is an architect and engineer</p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal3">View Recipe</a>
+
+        <div class="modal" id="myModal3">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">Kadhi Pakoda</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                      Here’s a step-by-step procedure to make Kadi Pakora:
+
+                      Step 1: Prepare the Pakoras (Fritters)
+                      Mix Ingredients:
+                      
+                      In a bowl, combine 1 cup gram flour (besan), thinly sliced onion, chopped green chilies, cumin seeds, ajwain (if using), red chili powder, and salt.
+                      Make the Batter:
+                      
+                      Gradually add water to the mixture and stir until you get a thick batter that can hold the ingredients together. It shouldn’t be too runny.
+                      Heat Oil:
+                      
+                      Heat oil in a deep frying pan over medium heat.
+                      Fry Pakoras:
+                      
+                      Once the oil is hot, drop spoonfuls of the batter into the oil. Fry in batches, making sure not to overcrowd the pan.
+                      Fry until they are golden brown and crispy. Remove them with a slotted spoon and drain on paper towels. Set aside.
+                      Step 2: Prepare the Kadi (Yogurt Sauce)
+                      Mix Yogurt and Besan:
+                      
+                      In a bowl, whisk together 1 cup yogurt and 2 tablespoons gram flour (besan) until smooth.
+                      Add Spices:
+                      
+                      Stir in turmeric powder, red chili powder, and salt. Mix well.
+                      Add Water:
+                      
+                      Gradually add 2-3 cups of water, stirring continuously to prevent lumps. Adjust the consistency to your liking.
+                      Cook the Mixture:
+                      
+                      Pour the yogurt mixture into a saucepan and cook on medium heat. Stir constantly until it starts to boil. Reduce heat and let it simmer for about 10-15 minutes, stirring occasionally.
+                      Step 3: Temper the Kadi
+                      Heat Oil:
+                      
+                      In a small pan, heat 2-3 tablespoons of oil. Add cumin seeds and mustard seeds.
+                      Add Aromatics:
+                      
+                      Once the seeds crackle, add slit green chilies, dried red chilies, and grated ginger. Sauté for a minute until fragrant.
+                      Combine with Kadi:
+                      
+                      Pour this tempering into the simmering yogurt mixture. Stir well.
+                      Step 4: Combine Pakoras and Kadi
+                      Add Pakoras:
+                      Gently add the fried pakoras to the kadi. Simmer for another 5-7 minutes to allow the flavors to meld.
+                      Step 5: Serve
+                      Garnish:
+                      
+                      Garnish with fresh coriander leaves.
+                      Enjoy:
+                      
+                      Serve hot with steamed rice or roti.
+                      Enjoy your delicious Kadi Pakora!
+
+                      <br>
+                      <a href="https://youtu.be/Oa2s0dklrRo?feature=shared">Watch Video</a><br>
+                      <img src="images/kadai.jpg" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      </div>
+      <!-- ending of card-->
+
+      <!--staring of card-->
+      <div class="card" data-name="Dal Makhni">
+        <img class="card-img-top" src="images/allo.jpg" alt="Card image" style="width: 300px;" height="235px">
+        <h2>Dal Makhni</h2>
+        <p>n Indian Dish made up of rice and cummin seeds. </p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal4">View Recipe</a>
+        <div class="modal" id="myModal4">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">Dal Makhni</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                      Here’s a step-by-step procedure to make Dal Makhni:
+
+                      Step 1: Prepare the Lentils
+                      Soak the Lentils:
+                      Soak 1 cup of black lentils (urad dal) and 1/4 cup of red kidney beans (rajma) in plenty
+                      of water overnight.
+                      Step 2: Cook the Lentils
+                      Drain and Rinse:
+
+                      After soaking, drain and rinse the lentils and kidney beans.
+                      Pressure Cook:
+
+                      In a pressure cooker, add the soaked lentils and kidney beans along with 4-5 cups of
+                      water.
+                      Add salt to taste and a pinch of turmeric powder.
+                      Cook for about 15-20 minutes or until they are soft.
+                      Step 3: Prepare the Base
+                      Sauté Onions:
+
+                      In a large pot or heavy-bottomed pan, heat 2-3 tablespoons of butter over medium heat.
+                      Add 1 teaspoon of cumin seeds and let them splutter.
+                      Add 1 medium onion (finely chopped) and sauté until golden brown.
+                      Add Ginger, Garlic, and Green Chilies:
+
+                      Stir in the grated ginger, chopped garlic (4-5 cloves), and slit green chilies (2).
+                      Sauté for a couple of minutes until fragrant.
+                      Cook Tomatoes:
+
+                      Add 2-3 medium tomatoes (pureed or finely chopped) to the pot.
+                      Cook until the tomatoes are soft and the oil starts to separate, about 5-7 minutes.
+                      Step 4: Combine Everything
+                      Add Cooked Lentils:
+
+                      Add the cooked lentils and kidney beans to the tomato mixture.
+                      Stir well to combine.
+                      Adjust Consistency:
+
+                      Add water as needed to achieve your desired consistency.
+                      Simmer the dal on low heat for at least 30-40 minutes, stirring occasionally. This
+                      enhances the flavors.
+                      Step 5: Add Spices and Cream
+                      Season:
+
+                      Add 1 teaspoon of red chili powder and 1 teaspoon of garam masala.
+                      Adjust salt if needed.
+                      Add Cream:
+
+                      Stir in 1/2 cup of cream for richness and let it simmer for another 10-15 minutes.
+                      Step 6: Final Touches
+                      Garnish:
+                      Just before serving, add a little more butter and garnish with chopped fresh coriander
+                      leaves and additional cream if desired.
+                      Step 7: Serve
+                      Enjoy:
+                      Serve hot with naan, roti, or steamed rice.
+                      Enjoy your delicious Dal Makhni!
+
+                      <br>
+                      <a href="https://youtu.be/o3k55z-tv9I?feature=shared">Watch Video</a><br>
+                      <img src="images/dal.avif" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+        
+      </div>
+      <!-- ending of card-->
+     
+  </div>
+
+  <!--end of row 1-->
+
+
+  <!--row 2-->
+  <div class="container" style="max-width: 1320px;">
+   <br><br>
+    <h3 style="text-align: center;" id="south">South Indian</h3><br><br>
+  </div>
+    <div id="cards-container">
+
+      <!--staring of card-->
+      <div class="card" data-name="IDLI">
+        <img class="card-img-top" src="images/idle.avif" alt="Card image" style="width: 300px;" height="235px">
+        <h2>IDLI</h2>
+        <p>Life is uncertain, eat idli first ....! . </p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal5">View Recipe</a>
+        <div class="modal" id="myModal5">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">IDLI</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+
+                      Here’s a step-by-step guide to making Idlis:
+
+                      Step 1: Soak the Ingredients
+                      Soak Urad Dal: In a bowl, soak 1 cup of urad dal (split black gram) and 1 teaspoon of
+                      fenugreek seeds (if using) in enough water for at least 6 hours or overnight.
+                      Soak Rice: In another bowl, soak 2 cups of idli rice in water for the same duration.
+                      Step 2: Grind the Batter
+                      Drain and Rinse: After soaking, drain the urad dal and rice. Rinse them under running
+                      water.
+                      Grind Urad Dal: In a wet grinder or blender, grind the urad dal and fenugreek seeds
+                      first. Add a little water as needed to make a smooth batter. Scrape down the sides
+                      frequently.
+                      Grind Rice: Next, grind the soaked rice until it is slightly coarse but well-blended.
+                      Combine it with the urad dal batter in a large mixing bowl.
+                      Mix the Batters: Stir both batters together until well combined. The consistency should
+                      be thick but pourable.
+                      Step 3: Ferment the Batter
+                      Add Salt: Add salt to taste and mix well.
+                      Ferment: Cover the bowl with a lid or cloth and place it in a warm area for 8-12 hours,
+                      or until the batter has doubled in size and is bubbly. The time needed for fermentation
+                      may vary based on the climate.
+                      Step 4: Prepare the Idli Steamer
+                      Grease Idli Molds: Lightly grease the idli molds with oil to prevent sticking.
+                      Boil Water: In an idli steamer or a large pot, bring water to a boil.
+                      Step 5: Steam the Idlis
+                      Fill Molds: Pour the fermented batter into the greased idli molds, filling them about
+                      3/4 full.
+                      Steam: Carefully place the filled molds in the steamer. Cover and steam for about 10-15
+                      minutes, or until a toothpick inserted into the idlis comes out clean.
+                      Remove Molds: Once done, remove the molds from the steamer and let them cool for a
+                      minute.
+                      Step 6: Serve
+                      Demold Idlis: Gently remove the idlis from the molds using a spoon or knife.
+                      Serve Hot: Serve hot with coconut chutney, sambar, or any chutney of your choice.
+                      Enjoy your delicious, fluffy Idlis!
+                      <br>
+                      <a href="https://youtu.be/dcMlG1UA-jU?feature=shared">Watch Video</a><br>
+                      <img src="images/idle.avif" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+      </div>
+      <!-- ending of card-->
+       <!--staring of card-->
+      <div class="card" data-name="SAMBAR">
+        <img class="card-img-top" src="images/sambar.jfif" alt="Card image" style="width: 300px;" height="235px">
+        <h2>SAMBAR</h2>
+        <p>Sambar is a south indian letin and vegitable stew made with, tamrid and a unique spice. </p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal6">View Recipe</a>
+        <div class="modal" id="myModal6">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">SAMBAR</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+
+                      Here’s a step-by-step guide to making Sambar:
+
+                      Step 1: Cook the Dal
+                      Rinse the Dal: Rinse 1 cup of toor dal (pigeon peas) under running water until the water
+                      runs clear.
+                      Cook the Dal: In a pressure cooker or pot, add the rinsed dal with 3 cups of water.
+                      Pressure cook for about 3-4 whistles or cook until soft in a pot, which may take around
+                      30-40 minutes. Mash the dal lightly once cooked.
+                      Step 2: Prepare the Vegetables
+                      Chop Vegetables: Chop your choice of mixed vegetables (carrots, potatoes, beans,
+                      drumsticks, eggplant) into bite-sized pieces.
+                      Cook Vegetables: In a separate pot, add the chopped vegetables, 1 chopped onion, 1
+                      chopped tomato, 2-3 slit green chilies, and salt to taste. Add enough water to cover the
+                      vegetables and cook until they are tender.
+                      Step 3: Add Tamarind
+                      Prepare Tamarind: If using tamarind paste, mix 1 teaspoon of it with 1/4 cup of warm
+                      water. If using soaked tamarind, squeeze out the pulp and strain the liquid.
+                      Add to Vegetables: Once the vegetables are cooked, add the tamarind extract to the pot.
+                      Step 4: Add Cooked Dal and Sambar Powder
+                      Combine Dal and Vegetables: Add the cooked and mashed dal to the vegetable mixture.
+                      Add Sambar Powder: Stir in 2 tablespoons of sambar powder and mix well. Adjust the
+                      consistency with water if it's too thick. Simmer for about 10 minutes to allow the
+                      flavors to meld.
+                      Step 5: Temper the Sambar
+                      Heat Oil: In a small pan, heat 2 tablespoons of oil or ghee.
+                      Add Spices: Once hot, add 1 teaspoon of mustard seeds and let them splutter. Then add 1
+                      teaspoon of cumin seeds, 1-2 dried red chilies, and a pinch of asafoetida (hing).
+                      Pour Tempering into Sambar: Pour the tempering over the simmering sambar and mix well.
+                      Step 6: Garnish and Serve
+                      Garnish: Turn off the heat and garnish with fresh coriander leaves.
+                      Serve Hot: Serve hot with idli, dosa, rice, or even as a soup.
+                      Enjoy your flavorful Sambar!
+                      <br>
+                      <a href="https://youtu.be/EkJC0GgY5wk?feature=shared">Watch Video</a><br>
+                      <img src="images/sambar.jfif" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      </div>
+      <!-- ending of card-->
+       <!--staring of card-->
+      <div class="card" data-name="MEDHU VADA">
+        <img class="card-img-top" src="images/madhu.jpg" alt="Card image" style="width: 300px;" height="235px">
+        <h2>MEDHU VADA</h2>
+        <p>Craving Crunch....? conquer it fully with medhu vada </p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal7">View Recipe</a>
+        <div class="modal" id="myModal7">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">MEDHU VADA</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+
+                      Here’s a step-by-step guide to making Medhu Vada:
+
+                      Step 1: Soak the Dal
+                      Rinse Urad Dal: Rinse 1 cup of urad dal (split black gram) under running water until the
+                      water runs clear.
+                      Soak Dal: Soak the rinsed urad dal in enough water for about 4-6 hours or overnight.
+                      Step 2: Prepare the Batter
+                      Drain and Rinse: After soaking, drain the urad dal and rinse it again.
+                      Grind the Dal: In a wet grinder or a food processor, grind the soaked urad dal with a
+                      little water (about 1/4 cup or as needed) to form a smooth, thick batter. Scrape down
+                      the sides as needed.
+                      Mix Ingredients: Transfer the batter to a mixing bowl. Add chopped green chilies, grated
+                      ginger, chopped coriander leaves, chopped onions (if using), cumin seeds, asafoetida (if
+                      using), and salt to taste. Mix well.
+                      Step 3: Heat the Oil
+                      Prepare for Frying: In a deep frying pan or kadhai, heat oil over medium heat. To check
+                      if the oil is ready, drop a small amount of batter into the oil; if it sizzles and rises
+                      to the surface, the oil is ready.
+                      Step 4: Shape the Vadas
+                      Wet Your Hands: Keep a bowl of water nearby. Wet your hands to prevent the batter from
+                      sticking.
+                      Shape the Vadas: Take a small portion of the batter (about a lemon-sized ball), flatten
+                      it in your palm, and make a hole in the center to form a doughnut shape. Alternatively,
+                      you can use your fingers to shape it.
+                      Repeat: Repeat the process with the remaining batter.
+                      Step 5: Fry the Vadas
+                      Fry Vadas: Carefully slide the shaped vadas into the hot oil. Fry them in batches,
+                      making sure not to overcrowd the pan.
+                      Cook Until Golden: Fry until they turn golden brown and crispy on all sides, about 4-5
+                      minutes. Use a slotted spoon to turn them occasionally for even cooking.
+                      Drain Excess Oil: Once cooked, remove the vadas from the oil and drain them on paper
+                      towels to remove excess oil.
+                      Step 6: Serve
+                      Serve Hot: Serve Medhu Vadas hot with coconut chutney, sambar, or any dip of your
+                      choice.
+                      Enjoy your crispy and delicious Medhu Vadas!
+                      <br>
+                      <a href="https://youtu.be/5zj93-DvLic?feature=shared">Watch Video</a><br>
+                      <img src="images/madhu.jpg" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+        
+      </div>
+      <!-- ending of card-->
+       <!--staring of card-->
+      <div class="card" data-name="VEG PULAO">
+        <img class="card-img-top" src="images/palao.jpg" alt="Card image" style="width: 300px;" height="235px">
+        <h2>VEG PULAO</h2>
+        <p>Saying pulao as veg biryani is like calling a malayali as madrasi.
+        </p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal8">View Recipe</a>
+        <div class="modal" id="myModal8">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">VEG PULAO</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+
+                      Here’s a step-by-step guide to making Veg Pulao:
+
+                      Step 1: Prepare the Rice
+                      Rinse the Rice: Rinse 1 cup of basmati rice under running water until the water runs
+                      clear. This helps remove excess starch.
+                      Soak the Rice: Soak the rinsed rice in water for about 30 minutes. Drain and set aside.
+                      Step 2: Cook the Vegetables
+                      Chop Vegetables: Chop your choice of mixed vegetables (like carrots, peas, green beans,
+                      and potatoes) into small pieces.
+                      Heat Oil/Ghee: In a large pot or pressure cooker, heat 2 tablespoons of oil or ghee over
+                      medium heat.
+                      Step 3: Sauté Spices and Onions
+                      Add Whole Spices: Once the oil is hot, add 1-2 bay leaves, 2-3 cloves, 2-3 green
+                      cardamom pods, 1 small stick of cinnamon, and 1 teaspoon of cumin seeds. Sauté for a few
+                      seconds until fragrant.
+                      Sauté Onions: Add 1 sliced medium onion and sauté until it turns golden brown.
+                      Step 4: Add Vegetables and Spices
+                      Add Ginger-Garlic Paste: Stir in 1 teaspoon of ginger-garlic paste and sauté for about a
+                      minute until the raw smell disappears.
+                      Add Vegetables: Add the chopped mixed vegetables and 1-2 slit green chilies. Sauté for
+                      about 2-3 minutes.
+                      Season: Add salt to taste and mix well.
+                      Step 5: Add Rice and Water
+                      Add Soaked Rice: Gently add the drained basmati rice to the pot and sauté for 2-3
+                      minutes, making sure the rice is well coated with oil.
+                      Add Water: Pour in 2-3 cups of water (the ratio is typically 1 cup rice to 2 cups water,
+                      but adjust as needed). You can also add 1-2 tablespoons of lemon juice for flavor.
+                      Bring to a Boil: Stir everything gently, bring it to a boil, and then reduce the heat to
+                      low.
+                      Step 6: Cook the Pulao
+                      Cover and Cook: Cover the pot with a lid and let it simmer on low heat for about 15-20
+                      minutes, or until the rice is cooked and the water is absorbed. If using a pressure
+                      cooker, you can cook without the weight for about 10 minutes.
+                      Fluff the Rice: Once cooked, turn off the heat and let it sit for about 5 minutes. Then,
+                      fluff the rice gently with a fork.
+                      Step 7: Serve
+                      Garnish: Garnish with fresh coriander leaves if desired.
+                      Serve Hot: Serve the Veg Pulao hot with raita, pickle, or a side salad.
+                      Enjoy your delicious Veg Pulao!
+                      <br>
+                      <a href="https://youtu.be/nPi2GD2SqfQ?feature=shared">Watch Video</a><br>
+                      <img src="images/palao.jpg" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      </div>
+      <!-- ending of card-->
+      
+  </div>
+  <!--end of row 2-->
+
+
+  <!--row 3-->
+  
+ 
+  <div class="container" style="max-width: 1320px;">
+  <br><br>
+   <h3 style="text-align: center;" id="snacks">SNACKS AND DRINKS</h3><br><br>
+ </div>
+    <div id="cards-container">
+
+      <!--staring of card-->
+      <div class="card" data-name="SAMOSA">
+        <img class="card-img-top" src="images/samosa.jpg" alt="Card image" style="width: 300px;" height="235px">
+        <h2>SAMOSA</h2>
+        <p>Crispy golden and oh-so-delicious samosa are a flavour explosure. ..... </p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal9">View Recipe</a>
+        <div class="modal" id="myModal9">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">SAMOSA</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                      Here’s a step-by-step guide to making Samosas:
+
+                      Step 1: Prepare the Dough
+                      Mix Flour and Ingredients: In a mixing bowl, combine 2 cups of all-purpose flour, 1/2
+                      teaspoon of salt, and 4 tablespoons of oil or ghee.
+                      Knead the Dough: Gradually add water and knead until you form a smooth, firm dough.
+                      Cover it with a damp cloth and let it rest for about 30 minutes.
+                      Step 2: Prepare the Filling
+                      Boil and Mash Potatoes: Boil 2-3 medium potatoes until soft, then peel and mash them in
+                      a bowl.
+                      Add Vegetables: If using, add 1/2 cup of boiled green peas to the mashed potatoes.
+                      Mix Spices: In a pan, heat a little oil and add 1 teaspoon of cumin seeds and optional
+                      mustard seeds. Once they splutter, add 1-2 chopped green chilies and 1 teaspoon of
+                      grated ginger. Sauté for a minute.
+                      Combine: Add the mashed potatoes, boiled peas, 1 teaspoon of garam masala, 1/2 teaspoon
+                      of turmeric powder, 1/2 teaspoon of red chili powder, and salt to taste. Mix well and
+                      cook for a few minutes. Remove from heat and let it cool. Garnish with chopped coriander
+                      leaves.
+                      Step 3: Shape the Samosas
+                      Divide the Dough: After resting, knead the dough again and divide it into small balls
+                      (about the size of a golf ball).
+                      Roll Out: Take one dough ball, flatten it slightly, and roll it out into a thin oval or
+                      circle (about 6 inches in diameter).
+                      Cut the Dough: Cut the rolled dough in half to create two semicircles.
+                      Form Cones: Take one semicircle, and form a cone by folding it over and sealing the edge
+                      with a little water. Pinch the bottom to close it.
+                      Fill the Cone: Fill the cone with the potato filling, leaving a little space at the top.
+                      Seal the open edge with water to ensure it’s completely closed.
+                      Repeat: Repeat the process for the remaining dough and filling.
+                      Step 4: Fry the Samosas
+                      Heat Oil: In a deep frying pan or kadhai, heat oil over medium heat. To test if the oil
+                      is hot enough, drop a small piece of dough; if it sizzles and rises to the surface, the
+                      oil is ready.
+                      Fry Samosas: Carefully slide the filled samosas into the hot oil. Fry in batches, making
+                      sure not to overcrowd the pan.
+                      Cook Until Golden: Fry until they turn golden brown and crispy, about 5-7 minutes. Use a
+                      slotted spoon to turn them occasionally for even cooking.
+                      Drain Oil: Once done, remove the samosas from the oil and drain them on paper towels to
+                      remove excess oil.
+                      Step 5: Serve
+                      Serve Hot: Serve the samosas hot with green chutney, tamarind chutney, or yogurt.
+                      Enjoy your delicious homemade Samosas!
+
+                      <br>
+                      <a href="https://youtu.be/IEdVmXpjGcI?feature=shared">Watch Video</a><br>
+                      <img src="images/samosa.jpg" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+        
+      </div>
+      <!-- ending of card-->
+       <!--staring of card-->
+      <div class="card" data-name="NOODLES..">
+        <img class="card-img-top" src="images/noodles.jfif" alt="Card image" style="width: 300px;" height="235px">
+        <h2>NOODLES..</h2>
+        <p>Sambar is a south indian letin and vegitable stew made with, tamrid and a unique spice. </p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal10">View Recipe</a>
+        <div class="modal" id="myModal10">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">NOODLES..</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                      Here’s a step-by-step guide to making simple stir-fried noodles:
+
+                      Step 1: Cook the Noodles
+                      Boil Water: In a large pot, bring water to a boil. Add a pinch of salt for flavor.
+                      Cook Noodles: Add 200 grams of noodles (any type: egg, wheat, rice, or instant) to the
+                      boiling water. Cook according to the package instructions until al dente.
+                      Drain and Rinse: Once cooked, drain the noodles in a colander and rinse them under cold
+                      water to stop the cooking process. Set aside.
+                      Step 2: Prepare the Vegetables
+                      Chop Vegetables: Prepare 1 cup of mixed vegetables (like bell peppers, carrots,
+                      broccoli, and beans) by chopping them into bite-sized pieces.
+                      Mince Garlic: Finely chop 2-3 cloves of garlic and set aside.
+                      Step 3: Stir-Fry the Vegetables
+                      Heat Oil: In a large pan or wok, heat 2-3 tablespoons of oil over medium-high heat.
+                      Add Garlic: Once the oil is hot, add the minced garlic and sauté for about 30 seconds
+                      until fragrant.
+                      Add Vegetables: Add the chopped mixed vegetables and stir-fry for about 3-4 minutes
+                      until they are tender but still crisp.
+                      Step 4: Add Noodles and Sauce
+                      Add Noodles: Add the cooked noodles to the pan with the vegetables.
+                      Season: Pour in 1 tablespoon of soy sauce and 1 tablespoon of vinegar (optional). If you
+                      like it spicy, you can add 1-2 chopped green chilies or 1 teaspoon of chili sauce.
+                      Mix Well: Toss everything together gently to combine, ensuring the noodles are coated
+                      with the sauce and mixed with the vegetables. Cook for another 2-3 minutes.
+                      Step 5: Final Touches
+                      Taste and Adjust: Taste the noodles and adjust the seasoning with more soy sauce, salt,
+                      or pepper as needed.
+                      Garnish: If desired, sprinkle chopped spring onions on top for garnish.
+                      Step 6: Serve
+                      Serve Hot: Serve the stir-fried noodles hot, either as a main dish or as a side.
+                      Enjoy your delicious homemade noodles!
+
+                      <br>
+                      <a href="https://youtu.be/u3vuq3zaR20?feature=shared">Watch Video</a><br>
+                      <img src="images/noodles.jfif" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+      </div>
+      <!-- ending of card-->
+       <!--staring of card-->
+      <div class="card" data-name="HONEY CHILLI POTATOA">
+        <img class="card-img-top" src="images/honey chilli4.jfif" alt="Card image" style="width: 300px;" height="235px">
+        <h2>HONEY CHILLI POTATO</h2>
+        <p>Craving Crunch....? conquer it fully with medhu vada </p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal11">View Recipe</a>
+        <div class="modal" id="myModal11">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">HONEY CHILLI POTATO</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                      Here’s a step-by-step guide to making Honey Chilli Potato:
+
+                      Step 1: Prepare the Potatoes
+                      Cut Potatoes: Peel and cut 2 large potatoes into thin fries or wedges.
+                      Soak Potatoes: Soak the cut potatoes in water for about 15-20 minutes. This helps remove
+                      excess starch and makes them crispier.
+                      Step 2: Fry the Potatoes
+                      Drain and Dry: After soaking, drain the potatoes and pat them dry with a kitchen towel.
+                      Coat with Cornstarch: In a mixing bowl, toss the dried potato pieces with 1/4 cup of
+                      cornstarch until evenly coated.
+                      Heat Oil: In a deep frying pan or kadhai, heat enough oil for frying over medium heat.
+                      Fry Potatoes: Once the oil is hot, carefully add the coated potatoes in batches. Fry
+                      until they are golden and crispy, about 5-7 minutes. Remove them using a slotted spoon
+                      and drain on paper towels.
+                      Step 3: Prepare the Sauce
+                      Heat a Pan: In a separate pan, heat 1-2 tablespoons of oil over medium heat.
+                      Add Garlic and Ginger: Add 2-3 cloves of minced garlic and 1 tablespoon of grated
+                      ginger. Sauté for about 30 seconds until fragrant.
+                      Add Green Chilies: Add 1-2 sliced green chilies and stir for another 30 seconds.
+                      Step 4: Combine Ingredients
+                      Mix Sauce Ingredients: In a bowl, combine 2 tablespoons of honey, 2 tablespoons of soy
+                      sauce, 1 tablespoon of chili sauce, and 1 tablespoon of tomato ketchup (if using). Mix
+                      well.
+                      Add Sauce to Pan: Pour the sauce mixture into the pan with garlic and ginger. Stir well
+                      to combine and let it simmer for about 1-2 minutes.
+                      Step 5: Toss in the Potatoes
+                      Add Fried Potatoes: Add the crispy fried potatoes to the pan. Toss them gently in the
+                      sauce until well coated.
+                      Cook Briefly: Cook for an additional 1-2 minutes to allow the flavors to meld, stirring
+                      gently.
+                      Step 6: Serve
+                      Garnish: Transfer the Honey Chilli Potato to a serving plate. Garnish with chopped
+                      spring onions and sesame seeds if desired.
+                      Enjoy: Serve hot as an appetizer or snack!
+                      Enjoy your delicious Honey Chilli Potato!
+
+                      <br>
+                      <a href="https://youtu.be/HToinNNWISU?feature=shared">Watch Video</a><br>
+                      <img src="images/honey chilli4.jfif" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+        
+      </div>
+      <!-- ending of card-->
+       <!--staring of card-->
+      <div class="card" data-name="MANCHURIAN">
+        <img class="card-img-top" src="images/mancuriyan.jpg" alt="Card image" style="width: 300px;" height="235px">
+        <h2>MANCHURIAN</h2>
+        <p>Saying pulao as veg biryani is like calling a malayali as madrasi.
+        </p>
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal12">View Recipe</a>
+        <div class="modal" id="myModal12">
+          <div class="modal-dialog">
+              <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                      <h4 class="modal-title">MANCHURIAN</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                      Here’s a step-by-step guide to making Vegetable Manchurian:<br><br>
+
+                      Step 1: Prepare the Manchurian Balls
+                      Chop Vegetables: Finely chop 1 cup of mixed vegetables (like cabbage, carrots, bell
+                      peppers, and beans).
+
+                      Make the Mixture: In a mixing bowl, combine the chopped vegetables with:
+
+                      1/2 cup all-purpose flour (maida)
+                      1/4 cup cornstarch
+                      1-2 chopped green chilies
+                      1 teaspoon ginger-garlic paste
+                      Salt and pepper (to taste)
+                      Mix Well: Combine everything thoroughly until you have a dough-like consistency. If it’s
+                      too dry, add a little water, but avoid making it too wet.
+                      <br><br>
+                      Step 2: Shape the Balls
+                      Form Balls: Take small portions of the mixture and roll them into small balls (about the
+                      size of a marble).
+                      Set Aside: Place the shaped balls on a plate.<br><br>
+                      Step 3: Fry the Manchurian Balls
+                      Heat Oil: In a deep frying pan or kadhai, heat enough oil over medium heat for deep
+                      frying.
+                      Fry Balls: Once the oil is hot, carefully drop the vegetable balls into the oil in
+                      batches. Fry until they are golden brown and crispy, about 4-5 minutes.
+                      Drain: Remove the fried balls using a slotted spoon and drain them on paper
+                      towels.<br><br>
+                      Step 4: Prepare the Sauce
+                      Heat Oil in a Pan: In a separate pan, heat 2 tablespoons of oil over medium heat.
+                      Sauté Aromatics: Add 2-3 minced garlic cloves and 1-inch piece of finely chopped ginger.
+                      Sauté for about 30 seconds until fragrant.
+                      Add Green Chilies: Add 2-3 slit green chilies and sauté for another 30 seconds.<br><br>
+                      Step 5: Add Sauce Ingredients
+                      Combine Sauces: Add:
+                      1/4 cup soy sauce
+                      2 tablespoons tomato ketchup
+                      1 tablespoon chili sauce (adjust to taste)
+                      1 tablespoon vinegar
+                      Stir Well: Mix everything together and let it simmer for about 1-2 minutes.<br><br>
+                      Step 6: Thicken the Sauce
+                      Add Cornflour Mixture: In a small bowl, mix 1 tablespoon of cornflour with 1/4 cup of
+                      water to create a slurry. Gradually add this to the sauce while stirring continuously.
+                      Cook Until Thickened: Cook the sauce for another 2-3 minutes until it thickens to your
+                      desired consistency.<br><br>
+                      Step 7: Combine Manchurian with Sauce
+                      Add Fried Balls: Gently add the fried vegetable balls to the sauce and toss to coat them
+                      evenly. Cook for another minute to allow the flavors to meld.<br><br>
+                      Step 8: Serve<br><br>
+                      Garnish: Garnish with chopped spring onions.
+                      Enjoy: Serve hot with fried rice, noodles, or as an appetizer!
+                      Enjoy your delicious Vegetable Manchurian!
+
+                      <br>
+                      <a href="https://youtu.be/DkZR9sgwm8E?feature=shared">Watch Video</a><br>
+                      <img src="images/mancuriyan.jpg" height="300px" width="300px">
+
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+        
+      </div>
+      <!-- ending of card-->
+      
+  </div><br><br>
+  
+  <!--end of row 3-->
+  
+  <footer class="footer1">
+    <div class="footer1-container">
+      <div class="footer1-section">
+        <h4>About Us</h4>
+        <p>We are a team dedicated to providing the best services for our customers.</p>
+      </div>
+      <div class="footer1-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="signup.html">Signup</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer1-section">
+        <h4>Contact</h4>
+        <p>Email: info@myweb.com</p>
+        <p>Phone: +91 99888998898</p>
+      </div>
+    </div>
+    <div class="footer1-bottom">
+      <p>&copy;  All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

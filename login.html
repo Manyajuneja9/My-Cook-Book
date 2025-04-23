@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+   
+
+    <style>
+        /* menu style*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .site-name {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+
+
+        /* Signup Form Styles */
+        .signup-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-container h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .signup-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .signup-container label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .signup-container input[type="text"],
+        .signup-container input[type="email"],
+        .signup-container input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .signup-container button {
+            padding: 10px;
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signup-container button:hover {
+            background-color: #e5533d;
+        }
+
+    @media (max-width: 768px) 
+    {
+    .navbar .menu
+     {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .navbar .menu a 
+    {
+        padding: 10px;
+    }
+    }
+    .menu-toggle 
+    {
+        display: block;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    /* Desktop View */
+@media (min-width: 769px)
+ {
+    .menu-toggle 
+    {
+        display: none;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.avif" alt="Logo">
+        </div>
+        <div class="site-name">MY COOK BOOK</div>
+        <div class="menu-toggle" onclick="toggleMenu()"></div>
+        <div class="menu">
+            <div class="menu-item">
+                <a href="home.html" onclick="toggleSubmenu(event)">HOME</a>
+            </div>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Signup Form -->
+    <div class="signup-container">
+        <h2>Login</h2>
+        <form action="" method="POST">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit"><a href="home.html" style="text-decoration: none; color:#333">Sign Up</a></button>
+        </form>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.navbar .menu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+        </script>
+</body>
+
+</html>
+

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cook Book - Recipe Sharing Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-color: #2d3436;
+            --light-color: #f9f9f9;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            top: 100%;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Header Section */
+        header {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://source.unsplash.com/1600x900/?cooking') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 60px;
+            animation: headerEntrance 1s ease-out;
+        }
+
+        .header-content {
+            text-align: center;
+            color: white;
+        }
+
+        .search-bar {
+            margin-top: 2rem;
+            width: 700px;
+            max-width: 90%;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        /* Recipe Sections */
+        .recipe-section {
+            padding: 4rem 5%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .recipe-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .recipe-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .favorite-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .favorite-btn.active {
+            color: red;
+        }
+
+        .recipe-content {
+            padding: 1.5rem;
+        }
+
+        .rating {
+            color: #ffd700;
+            margin: 0.5rem 0;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            flex: 1;
+            text-align: center;
+        }
+
+        .primary-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .secondary-btn {
+            background: var(--secondary-color);
+            color: white;
+        }
+        /* Animations */
+        @keyframes headerEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .search-bar {
+                width: 90%;
+            }
+        }
+
+        /* new code  General Styles */ 
+    .recipe-container{
+display: flex;
+  flex-direction: row;
+  margin-left: 150px;
+  align-items: center;
+  gap: 110px;
+    }
+  .recipe-box {
+    width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .recipe-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .recipe-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .recipe-content {
+    padding: 15px;
+  }
+  
+  .recipe-content h3 {
+    margin-top: 0;
+  }
+  
+  .recipe-content p {
+    color: #666;
+  }
+  .view-recipe-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-recipe-btn:hover {
+    background-color: #45a049;
+  }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">My Cook Book</div>
+        <div class="nav-links">
+            <div class="dropdown">
+                <a href="#"><i class="fas fa-bars"></i> Menu</a>
+                <div class="dropdown-content">
+                    <a href="#punjabi">Punjabi</a>
+                    <a href="#south-indian">South Indian</a>
+                    <a href="#snacks">Snacks</a>
+                    <a href="#vegan">Vegan</a>
+                    <a href="#gluten-free">Gluten Free</a>
+                </div>
+            </div>
+            <a href="#favorites"><i class="fas fa-heart"></i> Favorites</a>
+            <a href="#login">Login</a>
+            <a href="#signup">Signup</a>
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1 style="animation: float 3s ease-in-out infinite;">My Cook Book</h1>
+            <p>Discover & Share Amazing Recipes</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search recipes...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Recipe Sections -->
+    <section class="recipe-section" id="punjabi">
+        <h2 class="section-title"> Recipes</h2>
+        <div class="recipe-container">
+<!--starting of  1stcard-->
+<div class="recipe-box">
+    <img src="https://tse2.mm.bing.net/th?id=OIP.d0kUf437wj7X4FaPp9TSswHaE8&pid=Api&P=0&h=180" alt="Recipe Image" class="recipe-image">
+    <div class="recipe-content">
+      <h3>Allo Prantha</h3>
+      <p>Punjabian Di Shaan</p>
+      <button class="view-recipe-btn">View Recipe</button>
+    </div>
+    </div>
+  <div class="recipe-box">
+    <img src="https://tse2.mm.bing.net/th?id=OIP.d0kUf437wj7X4FaPp9TSswHaE8&pid=Api&P=0&h=180" alt="Recipe Image" class="recipe-image">
+    <div class="recipe-content">
+      <h3>Allo Prantha</h3>
+      <p>Punjabian Di Shaan</p>
+      <button class="view-recipe-btn">View Recipe</button>
+    </div>
+</div>
+<div class="recipe-box">
+    <img src="https://tse2.mm.bing.net/th?id=OIP.d0kUf437wj7X4FaPp9TSswHaE8&pid=Api&P=0&h=180" alt="Recipe Image" class="recipe-image">
+    <div class="recipe-content">
+      <h3>Allo Prantha</h3>
+      <p>Punjabian Di Shaan</p>
+      <button class="view-recipe-btn">View Recipe</button>
+    </div>
+</div>
+</div>
+
+
+            <!-- Recipe cards will be added dynamically -->
+    </section>
+
+    <!-- Repeat sections for other categories -->
+
+    <script>
+        // Sample Recipe Data
+        const recipes = {
+            punjabi: [
+                {
+                    title: "Butter Chicken",
+                    image: "https://source.unsplash.com/random/301x300?butter-chicken",
+                    rating: 4,
+                    desc: "Creamy tomato-based curry with tender chicken",
+                    category: "punjabi"
+                },
+                // Add more recipes
+            ],
+            // Add other categories
+        };
+
+        // Initialize recipes
+        function initRecipes() {
+            const grid = document.querySelector('.recipe-grid');
+            recipes.punjabi.forEach(recipe => {
+                const card = document.createElement('div');
+                card.className = 'recipe-card';
+                card.innerHTML = `
+                    <div class="recipe-image" style="background-image: url('${recipe.image}')">
+                        <button class="favorite-btn" onclick="toggleFavorite(this)"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="recipe-content">
+                        <h3>${recipe.title}</h3>
+                        <div class="rating">
+                            ${'<i class="fas fa-star"></i>'.repeat(recipe.rating)}
+                        </div>
+                        <p>${recipe.desc}</p>
+                        <div class="btn-group">
+                            <button class="btn primary-btn">View Recipe</button>
+                            <button class="btn secondary-btn">Save</button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            document.querySelector('.theme-toggle i').classList.toggle('fa-moon');
+            document.querySelector('.theme-toggle i').classList.toggle('fa-sun');
+        }
+
+        // Favorite Toggle
+        function toggleFavorite(btn) {
+            btn.classList.toggle('active');
+            btn.querySelector('i').classList.toggle('far');
+            btn.querySelector('i').classList.toggle('fas');
+        }
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.recipe-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Initialize
+        window.onload = initRecipes;
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* menu style*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+      
+
+        .navbar .site-name {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            color: #333;
+        }
+
+        .contact-header h2 {
+            font-size: 2em;
+        }
+
+        .contact-info,
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            color: #333;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .contact-info p i {
+            margin-right: 10px;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-form button {
+            padding: 10px 15px;
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            background-color: #e5533d;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+
+            .contact-info,
+            .contact-form {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="site-name">MY COOK BOOK</div>
+        <div class="menu-toggle" onclick="toggleMenu()"></div>
+        <div class="menu">
+            <div class="menu-item">
+                <a href="home.html" onclick="toggleSubmenu(event)">HOME</a>
+            </div>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Contact Page Content -->
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2>Contact Us</h2>
+            <p>We’d love to hear from you! Fill out the form below or contact us through our details.</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Our Contact Information</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Food Street, Recipe City, FL 32123</p>
+            <p><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</p>
+            <p><i class="fas fa-envelope"></i> info@mycookbook.com</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="/submit_contact" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
